@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Media | Digital Marketing Agency Specialized in Health & Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 30px rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000000;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .stat-text {
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            color: #ffffff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .case-study {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            color: #ffffff;
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-type {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000000;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .result-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            padding: 1rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-form button {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #FFD700;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 2px 2px 3px #999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Nexora Media</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cases">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-btn">Get Free Consultation</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="fade-in">Transforming Your Digital Vision Into Measurable Success</h1>
+            <p class="fade-in">A specialized digital marketing agency focused on Health & Beauty industry - We help you attract the right clients and increase your profits</p>
+            <a href="#contact" class="cta-btn">Start Your Project With Us</a>
+            
+            <div class="hero-stats">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-text">Clinics & Beauty Centers</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">300%</div>
+                    <div class="stat-text">Average Booking Increase</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-text">Monthly Impressions</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">400%</div>
+                    <div class="stat-text">Return on Investment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Management</h3>
+                    <p>Create and manage professional accounts that attract the right clients and convert followers into real customers</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Paid Advertising Campaigns</h3>
+                    <p>Targeted and optimized ads to achieve the best return on investment across all social media platforms</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Creative Content Creation</h3>
+                    <p>Engaging and valuable content that tells your brand story and converts followers into loyal customers</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Brand Identity Design</h3>
+                    <p>Comprehensive and attractive visual identity design that reflects your brand values in the health & beauty industry</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Digital Community Building</h3>
+                    <p>Create and manage active and interactive digital communities around your brand to build loyalty and trust</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Comprehensive performance analysis and detailed reports to measure your marketing campaign success and continuously improve them</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="cases" class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            
+            <div class="case-study">
+                <div class="case-study-header">
+                    <h3>Premium Beauty Clinic - Cosmetic Procedures & Skincare</h3>
+                    <span class="case-study-type">Medical Clinic</span>
+                </div>
+                <p><strong>Challenge:</strong> New clinic needed to attract the right clients in a competitive market</p>
+                <p><strong>Solution:</strong> Comprehensive strategy including social media management, medical content, and targeted advertising</p>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">200%</div>
+                        <div>Booking Increase</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">15K</div>
+                        <div>New Followers</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">$150K+</div>
+                        <div>Additional Revenue</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">6</div>
+                        <div>Months Only</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <h3>Organic Cosmetics Brand</h3>
+                    <span class="case-study-type">Beauty Brand</span>
+                </div>
+                <p><strong>Challenge:</strong> Launching a new brand in a saturated market</p>
+                <p><strong>Solution:</strong> Comprehensive launch campaign with influencers and educational content</p>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">300%</div>
+                        <div>Sales Increase</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">25K+</div>
+                        <div>Engaged Followers</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">1M+</div>
+                        <div>Campaign Views</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">3</div>
+                        <div>Viral Campaigns</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <h3>Premium Hair Salon Chain</h3>
+                    <span class="case-study-type">Salon Business</span>
+                </div>
+                <p><strong>Challenge:</strong> Expanding business and increasing bookings across multiple locations</p>
+                <p><strong>Solution:</strong> Location-specific content with integrated booking system</p>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">400%</div>
+                        <div>Booking Growth</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">80%</div>
+                        <div>Loyalty Increase</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">2</div>
+                        <div>New Locations</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">12</div>
+                        <div>Months to Expand</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Ready to Start Your Success Journey?</h2>
+            <p>Get a free consultation and discover how we can help you achieve your goals</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/meozankw" method="POST">
+                <input type="text" name="name" placeholder="Your Full Name" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <select name="business_type" required>
+                    <option value="">Select Your Business Type</option>
+                    <option value="clinic">Medical Clinic</option>
+                    <option value="beauty-center">Beauty Center</option>
+                    <option value="salon">Hair Salon</option>
+                    <option value="cosmetics">Cosmetics Brand</option>
+                    <option value="fitness">Fitness Center</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea name="message" placeholder="Tell us about your needs and goals" rows="4"></textarea>
+                <button type="submit">Get Your Free Consultation</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>+213 XXX XXX XXX</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>contact11.nexoramedia@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nexora Media. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/213XXXXXXXXX" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // Form will be handled by Formspree
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Re-enable button after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = 'Get Your Free Consultation';
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .case-study').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
